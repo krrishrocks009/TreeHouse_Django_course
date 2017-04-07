@@ -26,3 +26,25 @@ Example
 
 with assertRaises(ValueError):
     int('a')
+
+Using Coverage::
+
+Installing coverage.py
+
+pip install coverage
+
+Using coverage.py
+
+Make sure you test file can be run from the command line without the -m unittest argument.
+
+coverage run tests.py
+
+Generate a report
+
+coverage report or coverage report -m if you want the missed lines.
+ 
+HTML Reports - Coverage
+
+coverage html will generate the HTML report. By default, it'll live in the htmlcov/ directory.
+
+To serve HTML files (and CSS, JS, etc) directly from Python, we used the http.server module through python -m http.server.

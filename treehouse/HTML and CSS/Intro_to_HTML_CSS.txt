@@ -1,0 +1,28 @@
+INTRODUCTION TO HTML AND CSS
+
+
+HTML - HyperText Markup Language, a set of tags we use to describe the structure of web pages.
+CSS - Cascading Style Sheets, a language used to describe how an HTML element should look when displayed in a browser.
+
+Structure of Html
+
+<!DOCTYPE html> - A piece of code that tells the browser what kind of information it’s getting, so that it can display your web page properly.
+<html> - All of your code must be between tags.
+<head> - Hold all the important behind-the-scenes information about your web page, like the title of your web page, and a links to a CSS stylesheets.
+<title> - Stuff between title tags doesn’t appear on the web page, but you’ll see it in search engine results and browser tabs.
+<body> - Everything that displays in the browser -- header, navigation, images, content -- goes between the body tags.
+
+Image Tag Attributes:
+
+alt - Short for alternative text, this attribute always goes on an <img> tag and should contain a short description of the image.
+src -Tells the browser where the image is located. You can link to an image from you website’s files, or from an outside URL.
+
+Anchor Tags:
+
+Anything wrapped in <a> </a> is clickable, even images! Links can point to other pages, to other places on your website, or to links anywhere on the web.
+
+ul and ol Tags:
+
+ul -Unordered list. For listing things that do not need to be in any specific order. Navigation menus are often created with unordered lists, and are styled with CSS to display horizontally.
+ol -Ordered list. A list that is automatically numbered.
+
