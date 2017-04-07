@@ -10,3 +10,19 @@ assertGreater(x, y) - Make sure x is greater than y
 
 assertLess(x, y) - Make sure x is less than y
 
+assertIn(x, y) - Make sure x is a member of y (this is like the in keyword)
+
+assertIsInstance(x, y) - Make sure x is an instance of the y class
+
+assertGreaterEqual(x, y) - Make sure x is greater than or equal to y
+
+assertLessEqual(x, y) - Make sure x is less than or equal to y
+
+assertRaises(x) - Make sure the following code raises the x exception
+
+You can use @unittest.expectedFailure on tests that you know will fail
+
+Example
+
+with assertRaises(ValueError):
+    int('a')
