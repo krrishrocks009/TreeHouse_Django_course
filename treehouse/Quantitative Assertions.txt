@@ -1,0 +1,12 @@
+Quantitative Assertions:
+
+setUp() - Method that is run before each test. Use this to set up state for the tests
+
+assertEqual(x, y) - Make sure x and y are equal
+
+assertNotEqual(x, y) - Make sure x and y are not equal
+
+assertGreater(x, y) - Make sure x is greater than y
+
+assertLess(x, y) - Make sure x is less than y
+

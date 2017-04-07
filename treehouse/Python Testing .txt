@@ -1,0 +1,37 @@
+Python Testing
+
+New terms: Writing and Running Doctests
+
+doctest - A test written in a docstring.
+
+doctest library - The built-in Python library for running doctests.
+
+Running doctests
+
+From the command line
+
+python -m doctest your_script.py
+
+From inside a script
+
+import doctest
+
+doctest.testmod()
+
+New Terms::Your First unittest Test Case
+
+unittest - Python's library for writing tests
+
+TestCase - A collection of tests
+
+Running tests
+
+Command line
+
+python -m unittest tests.py
+
+In a script
+
+unittest.main()
+
+Remember, all tests in a TestCase have to start with the word test_ to be run. You can have methods that don't start with test_ for other purposes if you need them.

@@ -1,0 +1,51 @@
+Object-Oriented Python
+
+Objects:
+If you notice a directory named __pycache__ in your Workspace, don't worry about it. Python 3 creates this directory to store compiled bytecode in. This makes your programs execute faster but isn't something you need to bother with at all.
+
+Intro to Inheritance:
+
+What the heck is setattr all about?
+
+Did the setattr() usage in this video catch you off-guard? Let's talk about what it is and what it's doing.
+
+First, read the docs about it. I know documentation can sometimes be hard to read, but getting in the habit of reading it, starting there, will help you a lot in the long run.
+
+Now, let's try an experiment. I have a class:
+
+class Animal:
+    def __init__(self, **kwargs):
+        self.species = kwargs.get("species")
+        self.age = kwargs.get("age")
+        self.sound = kwargs.get("sound")
+I'm using **kwargs here to pack any and all keyword arguments into a dictionary. And then I'll make a wolf using that class.
+
+>>> wolf = Animal(species="Canus Lupus", age=5, sound="howl", color="gray")
+>>> wolf.species
+"Canus Lupus"
+Great. No errors, Python's happy, I have an instance of my Animal class. In the __init__, I set three attributes: species, age, and sound. I didn't set color, though. Is it available?
+
+>>> wolf.color
+AttributeError...
+No, it's not! But there weren't any errors when I created the instance. Why isn't the attribute available?
+
+Well, because I didn't create it. Remember, Python is very explicit. If I don't do something explicitly, Python doesn't do it at all. Since I didn't assign a color attribute to self, my instance doesn't have a color attribute.
+
+This is where setattr comes in. setattr lets me set attributes that I don't know about beforehand. I can, of course, go back and explicitly define a color attribute but what if the next user comes along and she wants a height or weight attribute? A year from now, Animal.__init__ might be hundreds of lines long with attribute declarations! And some of those attributes will only apply to a few animals!
+
+But...if I'm clever and use setattr, I can just happily accept any and all attributes that someone gives for a particular Animal instance without having to continually update __init__.
+
+class Animal:
+    def __init__(self, **kwargs):
+        for attribute, value in self.kwargs.items():
+            setattr(self, attribute, value)
+So, since I have a handy-dandy kwargs dict due to using **kwargs in the method parameters, I can loop through it's items method and pull out the two values from each iteration into attribute and value variables.
+
+The setattr function takes three arguments: the object to work on, the attribute name to define, and the value to give that attribute. Now, no matter what attribute values I give to my object (assuming they're valid attribute names), my class will happily apply them.
+
+Wait, why didn't we use __init__ instead of setup?
+
+Well, if we want to have functionality in our Game class for restarting the game, we can call setup() but we wouldn't want to try and re-initialize our class from the inside.
+
+
+

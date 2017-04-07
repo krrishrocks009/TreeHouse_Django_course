@@ -1,0 +1,60 @@
+from peewee import *
+
+db = SqliteDatabase('throwaway.db')
+
+class Test(Model):
+    name = CharField(max_length=10)
+    language = CharField(max_length=10)
+
+    class Meta:
+        database = db
+
+db.connect()
+db.create_tables([Test], safe=True)
+
+data = [('a', '1'), 
+        ('a', '2'), 
+        ('a', '3'), 
+        ('b', '1'), 
+        ('b', '2')]
+for f1, f2 in data:
+    Test.create(name=f1, language=f2)
+
+
+def show(label, entries):
+    print(label)
+    for entry in entries:
+        print('{} {}'.format(entry.name, entry.language))
+    print()
+
+
+all_entries = Test.select()
+show('.select()', all_entries)
+
+only_a = all_entries.where(Test.name == 'a')
+show("name == 'a'", only_a)
+
+only_1_in_only_a = only_a.where(Test.language == '1')
+show("name == 'a' followed by language == '1'", only_1_in_only_a)
+
+only_1_and_a = all_entries.where((Test.name == 'a') and 
+                                 (Test.language == '1'))
+show("(name == 'a') and (language == '1')", only_1_and_a)
+
+only_1_or_a = all_entries.where((Test.name == 'a') or 
+                                (Test.language == '1'))
+show("(name == 'a') or (language == '1')", only_1_or_a)
+
+only_1_amp_a = all_entries.where((Test.name == 'a') & 
+                                 (Test.language == '1'))
+show("(name == 'a') & (language == '1')", only_1_amp_a)
+
+only_1_pipe_a = all_entries.where((Test.name == 'a') | 
+                                 (Test.language == '1'))
+show("(name == 'a') | (language == '1')", only_1_pipe_a)
+
+cleanup = Test.delete().where((Test.name == 'a'))
+cleanup.execute()
+cleanup = Test.delete().where((Test.name == 'b'))
+cleanup.execute()
+db.close()
