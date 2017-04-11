@@ -1,0 +1,37 @@
+Using Forms for GET Requests8:
+
+
+URI Path Parameters
+
+Sometimes when you're searching using a web form, upon submitting a form, you won't see a query string in the resulting URL in your address bar. Consider the hypothetical scenario of searching on example.com. Let's say it has a search form that looks like this:
+
+<form method="get" action="/search">
+  <input type="text" name="q">
+  <button type="submit">Search</button>
+</form>
+Now let's say you enter "http" into the text input and submit the form. What you may observe when you finally see the search results is that the URL in your browser's address bar says
+
+example.com/search/http
+
+instead of
+
+example.com/search?q=http
+
+What's important to note here is that your browser hasn't done anything different with your form or with its submission. Assuming it's a standard HTML form, and the form's submission is handled natively by the browser, here's what likely happened:
+
+User enters "http" into text input
+User submits form
+Browser makes request as
+
+GET /search?q=http HTTP/1.1
+
+Server receives request, sends a response that includes the following:
+
+HTTP/1.1 302 Found
+Location: /search/http
+
+Browser receives response and makes GET request to "/search/http"
+Server receives request and responds with search results
+Browser displays search results (address bar says "example.com/search/http" at this point)
+Given that a user would only see the bolded steps (1,2, and 7), it might appear that something peculiar is happening. In fact, in Chrome Developer Tools if you check the box next to "Preserve log", you'll see this initial GET request with the query string on the URI (step 3), and the subsequent 302 response with a location header (step 5).
+

@@ -1,0 +1,1 @@
+django-admin.py startproject learning_site or django-admin startproject learning_site will get the project started. We won't need django-admin again for the rest of our work in this course.

@@ -1,0 +1,20 @@
+﻿UTF-8 Encoding:
+
+
+The UTF-8 character encoding is one in which every character in the Unicode Character Set can be represented with anywhere from 1 to 4 bytes.
+
+In general, the character encoding of a submitted form is UTF-8 by default. In the video, all the characters that were part of the payload can be represented with 1 byte (8 bits). This is because they're all part of the Basic Latin Characters. See for yourself by looking at the Basic Latin Characters and finding all the ones from our POST request payload in the list:
+
+firstname=Chris&language=English
+
+Since each character in that payload will take up exactly one byte, counting the bytes is equivalent to counting the characters.
+
+What happens if you use a character outside of Basic Latin? For example, consider the scenario that your payload instead looks like this:
+
+greeksigma=Σ
+
+The Greek capital sigma cannot be represented with one byte (it actually takes two). What your browser will do upon submitting a form with a Σ is substitute a URL-encoded version, which in the case of the Greek capital sigma is %CE%A3. So, the HTTP POST payload becomes the following:
+
+greeksigma=%CE%A3
+
+Therefore, when the content-length header is calculated with this URL-encoded version, it has a value of 17, which is what will be included in the HTTP POST request.

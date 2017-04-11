@@ -1,0 +1,9 @@
+Django has a built-in server that we can use during development.
+
+python manage.py runserver 0.0.0.0:8000 will run the server for Workspaces. On your own computer, you probably don't need the 0.0.0.0:8000 part.
+
+python manage.py migrate will apply all pending migrations from all apps. More on apps later.
+
+What are migrations?
+
+Migrations are a way of moving a database from one design, a specific set of tables and columns, to a new one. Migrations are reversible, too. The fact that they can be done backwards and forwards is what gives them their name.

@@ -1,0 +1,33 @@
+Using Forms for POST Requests8:32
+
+
+HTML Forms with File Uploads
+
+The HTML for a form that includes a file upload is slightly different. Specifically, there are two changes:
+
+An input element with the type "file" is added, and
+The encryption type of the form element must be set to "multipart/form-data"
+Here is how the HTML might look:
+
+<form method="post" action="/update_profile" enctype="multipart/form-data">
+  <input type="text" name="handle">
+  <input type="file" name="avatar">
+  <button type="submit">Upload</button>
+</form>
+When the form is submitted, the request looks something like the following:
+
+POST /update_profile HTTP/1.1
+Content-Type: multipart/form-data; boundary=----TH23XJ
+Content-Length: 34209
+
+------TH23XJ
+Content-Disposition: form-data; name="handle"
+
+treehouse
+------TH23XJ
+Content-Disposition: form-data; name="avatar"; filename="me.jpg"
+Content-Type: image/jpeg
+
+[binary data of file]
+------TH23XJ
+Notice that the data is transmitted in parts, which explains the "multipart/form-data" encryption type of the form, as well as the resulting and identical content-type header.

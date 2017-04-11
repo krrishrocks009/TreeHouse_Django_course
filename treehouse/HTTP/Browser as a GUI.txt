@@ -1,0 +1,9 @@
+The Browser as a GUI for HTTP1:52
+
+The HyperText Transfer Protocol provides a flexible yet dependable way for two devices to communicate over the internet. However, if we always had to manually construct these small "text files" for HTTP requests and responses, communication would be quite tedious. In this video, we introduce the web browser as a graphical user interface (GUI) for HTTP.
+
+Using Anchors for GET Requests:
+
+The "Referer" Header
+
+In an HTTP request, your browser includes a "referer" header, which is the page where the current request is initiated from. Looking closely, you might notice that "referer" is misspelled! The correct spelling is referrer, but the initial specifications included the incorrect spelling of the header. Because of its widespread use, the spelling has not been corrected.

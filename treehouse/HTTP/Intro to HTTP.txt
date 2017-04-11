@@ -1,0 +1,34 @@
+﻿Intro to HTTP
+
+HTTP stands for HyperText Transfer Protocol and represents a format of communication between two devices over the internet.
+
+The internet consists of a vast array of highly-connected devices spanning the entire globe. To ensure that any two devices can communicate, it was necessary to develop a common set of rules - or protocol - to facilitate dependable communication.
+
+Installing Telnet Client - OSX
+
+If you're using a Mac, Telnet should be installed and enabled. Simply open a terminal and execute some of the commands used in this video.
+
+Installing Telnet Client - Windows
+
+Depending on your version of Windows, you may already have it installed, and you simply need to enable it. Opening PowerShell and attempting to use Telnet will reveal whether or not you'll need to install.
+
+Try executing some of the commands we use in the video. If they aren't recognized, then you'll need to either enable or install Telnet. Here are a couple resources based on those two scenarios:
+
+Install Telnet on Windows
+Enable Telnet on Windows
+Installing Telnet Client - Linux
+
+It's possible that Telnet is already installed and ready to use in your terminal. If not, search for instructions on your specific distribution. Depending on the package management utility you use, you may be able to install with apt-get or yum.
+
+Now that you've seen HTTP in action, it's time to cover the details of both the request and the subsequent response. In this video, we cover the format of the request. In general, there are four parts: (1) the request line, (2) a series of headers with name/value pairs on separate lines, (3) a blank line, and (4) if the request is a POST request, a body or payload.
+
+How to request server in HTTP
+
+GET|POST [uri-uniform resource identifier] HTTP/[version]
+
+ex:GET /xml HTTP/1.1
+
+
+
+ 
+
