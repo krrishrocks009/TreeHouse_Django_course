@@ -1,0 +1,10 @@
+Since our Courses have Steps, let's add a view so we can see the steps for each course.
+
+{% for step in course.step_set.all %} Notice that we don't use the () on all(). You don't call functions in Django's template tags, the template engine will handle that for you.
+
+Also, step_set is automatically generated from the foreign key. Handy!
+
+Model.get(attribute=value) lets you get a single Model instance by a given attribute's value.
+
+Here is more info on prefetch_related and select_related. Don't bother too much with these until you're comfortable with Django's ORM.
+

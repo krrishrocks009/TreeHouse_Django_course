@@ -1,0 +1,5 @@
+We need to be able to see the details of each Step, so let's make a view just for that.
+
+linebreaks is a filter that turns two returns in a row into HTML paragraph tags.
+
+You apply filters to a variable with the pipe (|) character.

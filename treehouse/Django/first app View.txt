@@ -1,0 +1,5 @@
+Let's add a view to our app to show a list of all of our courses.
+
+include() allows you to include a list of URLs from another module. It will accept the variable name or a string with a dotted path to the default urlpatterns variable.
+
+If you don't have include() in your urls.py (more recent versions of Django have removed it), add it to the import line that imports url. That line will now look like from django.conf.urls import url, include.

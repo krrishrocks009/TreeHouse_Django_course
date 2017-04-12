@@ -1,0 +1,15 @@
+Django's ORM, like many others, uses classes to define a database table, and that class's attributes to define the columns in the table. We call these classes "models".
+
+django.db.models has most of the model functionality you'll use to create models and their fields.
+
+DateTimeField holds datetime objects.
+
+CharField holds strings.
+
+TextField holds an unspecified amount of text.
+
+More Django model field types.
+
+python manage.py makemigrations [app] will make the migrations for a specific app.
+
+python manage.py migrate [app] will run the pending migrations for a specific app. If you leave off the app name, any pending migrations for any apps will be run.

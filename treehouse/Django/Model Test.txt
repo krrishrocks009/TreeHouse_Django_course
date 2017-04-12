@@ -1,0 +1,9 @@
+Data is usually one of the most heavily used parts of an application so making sure your models work correctly is super important.
+
+Build a Social Network with Flask and Python Testing are both good resources for learning more about testing in Python.
+
+assertLess(a, b) checks that a is less than b.
+
+django.utils.timezone is Django's timezone utility that takes the TIME_ZONE setting into account.
+
+python manage.py test runs all of the tests for your apps.

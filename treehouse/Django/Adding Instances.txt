@@ -1,0 +1,9 @@
+We have a model and we've run our migration, but how do we get data into the database without writing SQL directly?
+
+python manage.py shell opens a Python shell with Django's configuration already loaded.
+
+Model.save() will save an in-memory instance of a model to the database.
+
+Model.create() will save an in-memory instance of a model to the database and return the newly-created object.
+
+Model.filter(attribute=value) will get a QuerySet of all instances of the Model that match the attribute values. You can change these values with other comparisons, too, like gte or in.

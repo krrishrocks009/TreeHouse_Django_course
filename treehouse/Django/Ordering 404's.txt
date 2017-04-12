@@ -1,0 +1,21 @@
+What if we get our steps out of order? What if someone puts in a bad URL?
+
+class Meta:
+    ordering = ['field1', 'field2']
+This will cause the model to be ordered by field1, then field2 if there are any conflicts on field1 (two instances having the same field1 value). Finally, they'll be sorted by id if a conflict still exists.
+
+get_object_or_404(Model, [selectors]) - Gets an object of Model by using whatever selection arguments have been given. For example: get_object_or_404(User, username='kennethlove') would try to get a User with an username set to "kennethlove". If that User didn't exist, a 404 error would be raised.
+
+What's the long way? Consider this view:
+
+from django.http import Http404
+
+from .models import Course
+
+def course_detail(request, pk):
+    try:
+        course = Course.objects.get(pk=pk)
+    except Course.DoesNotExist:
+        raise Http404()
+    else:
+        return render(request, 'courses/course_detail.html', {'course': course})

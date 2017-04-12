@@ -1,0 +1,6 @@
+HttpReponse is the class that represents an HTTP response back to the client. The way we used it in this video is the absolute simplest way of generating a response. It's not the most useful tool in the shed, but it's the gateway to all of the other HTTP tools we have.
+
+More information about HttpResponse and about Django's view functions.
+
+Url's:
+url() is a function that constructs a special object that Django uses to join URLs to view functions.

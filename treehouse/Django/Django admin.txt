@@ -1,0 +1,5 @@
+One of Django's jaw dropping features is its built-in, auto-generated admin panel.
+
+python manage.py createsuperuser will create a new superuser, or a user that's allowed to log into the admin area with all permissions.
+
+admin.site.register(Model) will register a model with the default admin site, which allows you to edit instances of that model in the admin.

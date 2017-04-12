@@ -1,0 +1,7 @@
+Django projects contain multiple Django apps. Each app generally encompasses a specific area of functionality.
+
+python manage.py startapp creates the skeleton of an app including the views, models, and tests files.
+
+INSTALLED_APPS is a list of all apps that Django should consider installed and active for the current project. These apps will be used to find templates, tests, models, and migrations.
+
+TIME_ZONE is the setting for what time zone your server is running in. The docs explain a little more and there's a list of time zones you can use.

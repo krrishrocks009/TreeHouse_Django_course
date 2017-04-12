@@ -1,0 +1,44 @@
+Views that return plain text are fine, but eventually we're going to want some fancy HTML.
+
+
+App-specific templates are best kept in a structure like app_name/templates/app_name because Django looks in app directories for a directory named templates and makes those templates automatically available.
+
+{{ and }} are used to mark a variable you want printed out.
+
+{% and %} mark template tags, or special bits of Python that Django's template engine knows how to run. Unlike Jinja2 templates, you can't just run arbitrary Python in a template.
+
+render() turns a request object, a template, and an optional context dictionary into a generated string. More about render.
+
+Template Inheritence:
+
+Templates work better when they work together.
+
+{% extends <template> %} - Template tag to specify which template the current one should inherit from.
+
+{% block <name> %} and {% endblock %} - Template tag pair to mark a section of a parent template as overridable.
+
+
+STATIC Assests:
+
+After we get HTML into the mix, we're going to want some CSS.
+
+STATICFILES_DIRS is a setting for where to find static files. These files will either be served during development or will end up being collected by the collectstatic command during deployment.
+
+staticfiles_urlpatterns() is a function that returns the URL patterns for static files based on DEBUG and a few other settings. You import it from django.contrib.staticfiles.urls.
+
+{% load static from staticfiles %} - The way to import the {% static %} tag for use.
+
+{% static "<path/to/asset>" %} - How to use the {% static %} tag to properly point to a static asset.
+
+Step by Step::
+
+Our Courses wouldn't be complete without Steps for students to follow.
+
+IntegerField is a field that holds integers, or whole numbers.
+
+An inline is a smaller form inside of a larger form. The smaller form represents a related record in the database.
+
+StackedInline is an inline where each field takes up the full width of the form. Fields are stacked.
+
+TabularInline is an inline where each field is part of a single row for the form.
+
