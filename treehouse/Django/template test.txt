@@ -1,0 +1,6 @@
+We also need to make sure that our templates are getting the data they need and are generating the output we want.
+
+assertTemplateUsed(response, 'template/name.html') checks that a given template is used somewhere in the response of the view.
+
+assertContains(response, 'string') checks that a given string is somewhere in the text of a response.
+

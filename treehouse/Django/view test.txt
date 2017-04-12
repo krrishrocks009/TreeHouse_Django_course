@@ -1,0 +1,10 @@
+We get to our model data through our views so they're equally important to test. Bonus, we can test our URLs at the same time.
+
+django.core.urlresolvers.reverse() takes a URL name and reverses it to the correct URL string. More information
+
+self.client acts like a web browser and lets you make requests to URLs, both inside and outside of your Django project.
+
+assertEqual(a, b) checks that a and b are equal to each other.
+
+assertIn(a, b) checks that a is contained in b.
+
