@@ -1,0 +1,11 @@
+DIY, or Do It Yourself, custom template tags! Build a template tag that will provide you with a link to the newest course in our library at all times.
+
+template is Django's module for all things template-related. We'll use this several times in the course.
+
+template.Library is a class that lets us register new tags and filters through an instance of itself.
+
+register.simple_tag(tag_name) or @register.simple_tag - Registers a function as a simple tag. Simple tags don't include new templates, don't have an end tag, and don't assign values to context variables.
+
+Write a more complicated template tag; one that returns a dictionary and has a more complex implementation.
+
+register.inclusion_tag("tag_template.html")(tag_name) or @register.inclusion_tag("tag_template.html") - Registers an inclusion tag. Inclusion tags render a template into wherever they're used.

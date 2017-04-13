@@ -1,0 +1,6 @@
+This filter will help you estimate how much time it will take a person to complete a particular step in a course on your site.
+
+pluralize - A filter that, by default, returns an "s" when attached to a number that's not 1, and nothing when the number is 1. You can provide different options if needed. More information is available in the official documentation.
+
+register.filter("filter_name", filter_function) or @register.filter("filter_name") - Registers a filter with the given name.
+
