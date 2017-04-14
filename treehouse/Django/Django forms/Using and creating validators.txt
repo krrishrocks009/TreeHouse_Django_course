@@ -1,0 +1,11 @@
+Validators, whether custom or Django-provided, give us a great way to make sure the content of a field matches a condition we've set.
+
+Did you notice my flip-flop in the video? Writing a custom validator is a great way to have reusable validation, so if I need to do something specific on a lot of fields, I definitely use a custom validator. In the example in this video, though, it just makes more sense to use Django's provided MaxLengthValidator. 
+
+
+Cleaning a Whole Form
+
+Sometimes you need to clean several fields together or you just need a check on the *entire* form.
+
+
+You'll find that a lot of beginners use clean() way more often than they use validators or clean_FIELDNAME(). Don't fall into this habit! When you're working with Django, and pretty much any other framework, you want to override and customize the smallest possible piece. It's less impact on your form to override clean_email and check a length or value than to override clean() and do the same. Always try to find what creates the least impact.

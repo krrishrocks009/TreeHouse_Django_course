@@ -1,0 +1,4 @@
+We can control how each field is cleaned by overriding a special method on our form class.
+
+
+Fields still have validators, which we'll talk about in the next video, so you can't, for example, make an EmailField accept non-valid email addresses by overriding the clean_fieldname method for that field. 

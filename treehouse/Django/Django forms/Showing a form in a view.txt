@@ -1,0 +1,5 @@
+We know how to create a form but how do we go about showing it in a view?
+
+You instantiate a form like you instantiate any other class, by using the class name and parentheses.
+
+You can use {{ form }} to display all of the form fields automatically. You can also get to each field with {{ form.field }} but this is more rare.

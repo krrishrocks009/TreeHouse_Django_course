@@ -1,0 +1,4 @@
+We can create forms and show them to users, but for forms to be really useful, we need to be able to process them once they're submitted.
+
+
+I know it seems longwinded to do the FormClass(request.POST) and then form.is_valid() dance, but it's a solid, time-tested approach to handling forms. Even though it's longer, I definitely encourage you to stick with it.
